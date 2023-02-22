@@ -3,9 +3,26 @@ title: "A3: SPL Library Checkouts"
 output: html_document
 ---
 
+```{r setup, include = F}
+
+# load libraries
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(plotly)
+
+spl_df <- read.csv("~/Desktop/INFO201/2017-2023-10-Checkouts-SPL-Data.csv", stringsAsFactors = F)
+
+source("Chart-1.R")
+source("Chart-2.R")
+source("Chart-3.R")
+```
+
 ### Introduction
 
 An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+
+
 
 ### Summary Information
 
@@ -48,6 +65,7 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 Here's an example of how to run an R script inside an RMarkdown file:
 
 ``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+# line plot
 ```
 
 ### Second Trends Over Time Chart
@@ -68,6 +86,8 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 Here's an example of how to run an R script inside an RMarkdown file:
 
 ``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+# scatter or bar plot 
+
 ```
 
 ### Your Choice
@@ -81,6 +101,7 @@ The last chart is up to you. It could be a line plot, scatter plot, histogram, b
 Here's an example of how to run an R script inside an RMarkdown file:
 
 ``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+# map 
 ```
 
 
