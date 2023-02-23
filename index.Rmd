@@ -9,10 +9,14 @@ output: html_document
 library(dplyr)
 library(ggplot2)
 library(tidyverse)
-library(plotly)
 
-spl_df <- read.csv("~/Desktop/INFO201/2017-2023-10-Checkouts-SPL-Data.csv", stringsAsFactors = F)
+# Read file
+spl_df <- read.csv("~/Desktop/INFO201/2013-2023-5-Checkouts-SPL.csv", stringsAsFactors = F) %>% 
+  mutate(date = paste0(CheckoutYear, "-", CheckoutMonth, "-01"))
 
+spl_df$date <- as.Date(spl_df$date, format = "%Y-%m-%d")
+
+source("summary.R")
 source("Chart-1.R")
 source("Chart-2.R")
 source("Chart-3.R")
@@ -37,14 +41,32 @@ These will likely be calculated using your DPLYR skills, answering questions suc
 
 Feel free to calculate and report values that you find relevant.
 
+
 ### The Dataset
 
 - Who collected/published the data?  
+
+This data was collected and published by the Seattle Public Library.
+
 - What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
+
+The data collected include the format, year, month, and number of checkouts per book. It also includes the title, the author(s), publishers, genre, and publication year of the book. 
+
 - How was the data collected or generated?  
+
+
+
 - Why was the data collected?  
+
+
+
 - What, if any, ethical questions do you need to consider when working with this data?  
+
+
+
 - What are possible limitations or problems with this data?   (at least 200 words)
+
+akjdhajksd
 
 
 ### First Trends Over Time Chart
@@ -64,8 +86,9 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+``````{r, echo = FALSE, warning = FALSE, code = readLines("Chart-1.R")}
 # line plot
+
 ```
 
 ### Second Trends Over Time Chart
@@ -85,7 +108,7 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+``````{r, echo = FALSE, code = readLines("Chart-2.R")}
 # scatter or bar plot 
 
 ```
@@ -100,8 +123,9 @@ The last chart is up to you. It could be a line plot, scatter plot, histogram, b
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
-# map 
+``````{r, echo = FALSE, code = readLines("Chart-3.R")}
+ 
+
 ```
 
 

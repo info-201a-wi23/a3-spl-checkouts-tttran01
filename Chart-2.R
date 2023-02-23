@@ -1,0 +1,10 @@
+library(dplyr)
+
+
+trend2_df <- spl_df %>% 
+  
+
+y_values <- seq(1,3)
+
+ggplot(data = trend2_df) +
+  geom_line(aes(x=x_values, y = y_values))
