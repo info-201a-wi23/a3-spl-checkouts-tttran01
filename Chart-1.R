@@ -21,9 +21,16 @@ checkouts_per_month <- series1_pt2 %>%
   group_by(Title, date) %>% 
   summarize(total_checkouts = sum(Checkouts, na.rm = T))
 
-ggplot(data = checkouts_per_month) +
+tog_chart <- ggplot(data = checkouts_per_month) +
   geom_line(mapping = aes(x = date, 
                 y = total_checkouts,
                 group = Title,
-                color = Title))
+                color = Title,
+                text = paste0("Title:", Title, ", ", total_checkouts))) +
+  labs(title = "Throne of Glass Series Checkouts",
+       x = "Dates",
+       y = "Checkouts",
+       color = "Books")
+
+ggplotly(tog_chart, tooltip = "text")
 

@@ -9,6 +9,7 @@ output: html_document
 library(dplyr)
 library(ggplot2)
 library(tidyverse)
+library(plotly)
 
 # Read file
 spl_df <- read.csv("~/Desktop/INFO201/2013-2023-5-Checkouts-SPL.csv", stringsAsFactors = F) %>% 
