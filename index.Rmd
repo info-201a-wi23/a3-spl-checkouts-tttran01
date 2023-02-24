@@ -10,9 +10,11 @@ library(dplyr)
 library(ggplot2)
 library(tidyverse)
 library(plotly)
+library(scales)
 
 # Read file
-spl_df <- read.csv("~/Desktop/INFO201/2013-2023-5-Checkouts-SPL.csv", stringsAsFactors = F) %>% 
+spl_df <- read.csv("~/Desktop/INFO201/2013-2023-5-Checkouts-SPL.csv", stringsAsFactors = F)
+spl_df <- spl_df %>% 
   mutate(date = paste0(CheckoutYear, "-", CheckoutMonth, "-01"))
 
 spl_df$date <- as.Date(spl_df$date, format = "%Y-%m-%d")
@@ -89,7 +91,7 @@ Here's an example of how to run an R script inside an RMarkdown file:
 
 ``````{r, echo = FALSE, warning = FALSE, code = readLines("Chart_1.R")}
 # line plot of ToG series
-chart_1
+tog_chart
 ```
 
 ### Second Trends Over Time Chart
