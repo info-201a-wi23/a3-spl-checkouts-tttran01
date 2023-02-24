@@ -1,5 +1,7 @@
 ---
 title: "A3: SPL Library Checkouts"
+author: Terresa Tran
+date: 02/24/2023
 output: html_document
 ---
 
@@ -20,9 +22,9 @@ spl_df <- spl_df %>%
 spl_df$date <- as.Date(spl_df$date, format = "%Y-%m-%d")
 
 source("summary.R")
-source("Chart-1.R")
-source("Chart-2.R")
-source("Chart-3.R")
+source("Chart_1.R")
+source("Chart_2.R")
+source("Chart_3.R")
 ```
 
 ### Introduction
@@ -43,6 +45,7 @@ These will likely be calculated using your DPLYR skills, answering questions suc
 - How has the number of print book checkouts changed over time?
 
 Feel free to calculate and report values that you find relevant.
+
 
 
 ### The Dataset
@@ -81,7 +84,7 @@ The first chart that you will create and include will show the trend over time o
 - Show more than one, but fewer than ~10 trends
   - For example, two books, or 5 different mediums
 - You must have clear x and y axis labels
-- The chart needs a clear title 
+- The chart needs a clear title
 - You need a legend for your different line colors and a clear - legend title
 In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
 
@@ -89,7 +92,7 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, warning = FALSE, code = readLines("Chart_1.R")}
+```{r, echo = FALSE, warning = FALSE, code = readLines("Chart_1.R")}
 # line plot of ToG series
 tog_chart
 ```
@@ -103,7 +106,7 @@ The second chart that you will create and include will show another trend over t
 - Show more than one, but fewer than ~10 trends
   - For example, two books, or 5 different mediums
 - You must have clear x and y axis labels
-- The chart needs a clear title 
+- The chart needs a clear title
 - You need a legend for your different line colors and a clear - legend title
 In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
 
@@ -111,7 +114,7 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("Chart_2.R")}
+```{r, echo = FALSE, code = readLines("Chart_2.R")}
 # bar plot Harry Potter book 1 vs 7
 hp_chart
 ```
@@ -121,12 +124,12 @@ hp_chart
 The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
 
 - You must have clear x and y axis labels
-- The chart needs a clear title 
+- The chart needs a clear title
 - You need a legend for your different line colors and a clear legend title
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("Chart_3.R")}
+```{r, echo = FALSE, code = readLines("Chart_3.R")}
 # Sarah J. Maas vs. Victoria Aveyard checkouts
 author_chart
 ```
