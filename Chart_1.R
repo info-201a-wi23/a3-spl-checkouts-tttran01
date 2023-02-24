@@ -1,4 +1,3 @@
-library(dplyr)
 
 series1_df <- spl_df %>% 
   select(CheckoutYear, CheckoutMonth, Checkouts, Title, Creator, date) %>% 
