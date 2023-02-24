@@ -87,9 +87,9 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, warning = FALSE, code = readLines("Chart-1.R")}
-# line plot
-
+``````{r, echo = FALSE, warning = FALSE, code = readLines("Chart_1.R")}
+# line plot of ToG series
+chart_1
 ```
 
 ### Second Trends Over Time Chart
@@ -110,7 +110,7 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 Here's an example of how to run an R script inside an RMarkdown file:
 
 ``````{r, echo = FALSE, code = readLines("Chart-2.R")}
-# scatter or bar plot 
+# bar plot Harry Potter series
 
 ```
 
@@ -125,7 +125,7 @@ The last chart is up to you. It could be a line plot, scatter plot, histogram, b
 Here's an example of how to run an R script inside an RMarkdown file:
 
 ``````{r, echo = FALSE, code = readLines("Chart-3.R")}
- 
+# Sarah J. Maas vs. J.K. Rowling checkouts
 
 ```
 
