@@ -16,17 +16,17 @@ tog_df <- series1_df %>%
   mutate(Title = na_if(series1_df$Title, "The Assassin")) %>% 
   drop_na(Title)
   
-checkouts_per_month <- tog_df %>% 
+tog_checkouts_per_month <- tog_df %>% 
   group_by(Title, date) %>% 
   summarize(total_checkouts = sum(Checkouts, na.rm = T))
 
-tog_chart <- ggplot(data = checkouts_per_month) +
+tog_chart <- ggplot(tog_checkouts_per_month) +
   geom_line(mapping = aes(x = date, 
                           y = total_checkouts,
                           group = Title,
                           color = Title,
                           text = paste0("Title:", Title, ", ", total_checkouts),
-                          text2 = paste("Date:", date))) +
+                          text2 = date)) +
   labs(title = "Throne of Glass Series Checkouts",
        x = "Dates",
        y = "Checkouts",
