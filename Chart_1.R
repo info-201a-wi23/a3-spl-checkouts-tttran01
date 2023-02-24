@@ -25,7 +25,8 @@ tog_chart <- ggplot(data = checkouts_per_month) +
                           y = total_checkouts,
                           group = Title,
                           color = Title,
-                          text = paste0("Title:", Title, ", ", total_checkouts))) +
+                          text = paste0("Title:", Title, ", ", total_checkouts),
+                          text2 = paste("Date:", date))) +
   labs(title = "Throne of Glass Series Checkouts",
        x = "Dates",
        y = "Checkouts",
@@ -34,5 +35,5 @@ tog_chart <- ggplot(data = checkouts_per_month) +
                breaks = scales::breaks_width("2 years"),
                labels = scales::label_date("'%y"))
 
-ggplotly(tog_chart, tooltip = "text")
+ggplotly(tog_chart, tooltip = c("text", "text2"))
 
