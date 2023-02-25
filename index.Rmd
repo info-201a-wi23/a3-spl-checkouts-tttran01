@@ -77,8 +77,6 @@ An issue with the data is the inconsistencies within the "Title" and "Creator" s
 
 ### First Trends Over Time Chart
 
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, code = readLines("Chart_1.R")}
 # line plot of ToG series
 tog_chart
@@ -87,8 +85,6 @@ tog_chart
 For the first chart, I looked at the trend between the regular series books from the "Throne of Glass" series with is my personal favorite book series. As you can see, Book 1 made significant increases in checkouts per month compared to the other books in the series with the greatest increase near the start of 2022. Books 2 and 3 follow suit as the others lag behind with books 4 and 5 having the smallest increase. Personally, Book 5 and 7 are my favorite and I wanted to see how they compared to the other books. 
 
 ### Second Trends Over Time Chart
-
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, code = readLines("Chart_2.R")}
 # bar plot Harry Potter book 1 vs 7
