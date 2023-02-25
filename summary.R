@@ -10,7 +10,7 @@ num_rows <- nrow(spl_df)
 
 num_col <- ncol(spl_df)
 
-smj_total_checkouts <- spl_df %>% 
+sjm_total_checkouts <- spl_df %>% 
   filter(Creator %in% c(
     "Sarah J. Maas", 
     "Maas, Sarah J."
