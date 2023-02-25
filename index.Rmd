@@ -46,7 +46,7 @@ These will likely be calculated using your DPLYR skills, answering questions suc
 
 Feel free to calculate and report values that you find relevant.
 
-This dataframe is extremely large, so I decided to find the number of rows, number of columns, the total number of checkouts for one of my favorite authors, the year of most checkouts and the total checkouts for the book I am currently reading. This dataframe has a total of **"r num_rows"** rows and **r num_col** categories. For all of Sarah J. Maas, I calculated the total number of checkouts she got from 2013 to 2023. This includes the novellas of the ToG series, as well as her other books. She received a total of **'r sjm_total_checkouts'** checkouts. The book I am currently reading is "The Invisible Life of Addie LaRue" which came out in 2020. Since then, the book received the most checkouts in **'r tbr_year'**. The book, as of January 2023 has a total of **'r tbr_checkouts** checkouts. 
+This dataframe is extremely large, so I decided to find the number of rows, number of columns, the total number of checkouts for one of my favorite authors, the year of most checkouts and the total checkouts for the book I am currently reading. This dataframe has a total of **`r num_rows`** rows and **`r num_col`** categories. For all of Sarah J. Maas, I calculated the total number of checkouts she got from 2013 to 2023. This includes the novellas of the ToG series, as well as her other books. She received a total of **`r sjm_total_checkouts`** checkouts. The book I am currently reading is "The Invisible Life of Addie LaRue" which came out in 2020. Since then, the book received the most checkouts in **`r tbr_year`**. The book, as of January 2023 has a total of **`r tbr_checkouts`** checkouts. 
 
 ### The Dataset
 
@@ -60,7 +60,7 @@ The data collected include the format, year, month, and number of checkouts per 
 
 - How was the data collected or generated?  
 
-An artist was creating a data visualization exhibition and used puiblic library data to create their art. To get this data they had to be collecting the data, and they had been for 10 years.
+An artist was creating a data visualization exhibition and used public library data to create their art. To get this data they had to be collecting the data, and they had been for 10 years.
 
 - Why was the data collected?  
 
