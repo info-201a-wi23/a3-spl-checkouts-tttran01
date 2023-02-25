@@ -10,12 +10,13 @@ num_rows <- nrow(spl_df)
 
 num_col <- ncol(spl_df)
 
-most_total_checkouts <- spl_df %>% 
-  filter(MaterialType == "BOOK") %>% 
-  group_by(Title) %>% 
+smj_total_checkouts <- spl_df %>% 
+  filter(Creator %in% c(
+    "Sarah J. Maas", 
+    "Maas, Sarah J."
+  )) %>% 
   summarize(total_checkouts = sum(Checkouts, na.rm = T)) %>% 
-  filter(total_checkouts == max(total_checkouts)) %>% 
-  pull(Title)
+  pull(total_checkouts)
 
 tbr_year <- spl_df %>% 
   filter(str_detect(Title, "Addie LaRue")) %>% 

@@ -31,7 +31,7 @@ source("Chart_3.R")
 
 An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
 
-
+This data was taken from the Seattle Public Library checkout dataset which kept track of the number of checkouts per month from 2013 to 2023. For this assignment I decided to analyze checkout trends of the Throne of Glass series, Harry Potter the Sorcerer's Stone vs The Deathly Hallows, and the trend of checkouts between authors Sarah J. Maas vs Victoria Aveyard, both of whom I read books from consistently. The Throne of Glass series is the first book series that really caught my attention. I read all 7 books in a month and read the last book (Kingdom of Ash) in a day. For Harry Potter, I wanted to see how many checkouts there were for the first book versus the last book. 
 
 ### Summary Information
 
@@ -46,7 +46,7 @@ These will likely be calculated using your DPLYR skills, answering questions suc
 
 Feel free to calculate and report values that you find relevant.
 
-
+This dataframe is extremely large, so I decided to find the number of rows, number of columns, the total number of checkouts for one of my favorite authors, the year of most checkouts and the total checkouts for the book I am currently reading. This dataframe has a total of **"r num_rows"** rows and **r num_col** categories. For all of Sarah J. Maas, I calculated the total number of checkouts she got from 2013 to 2023. This includes the novellas of the ToG series, as well as her other books. She received a total of **'r sjm_total_checkouts'** checkouts. The book I am currently reading is "The Invisible Life of Addie LaRue" which came out in 2020. Since then, the book received the most checkouts in **'r tbr_year'**. The book, as of January 2023 has a total of **'r tbr_checkouts** checkouts. 
 
 ### The Dataset
 
@@ -60,78 +60,48 @@ The data collected include the format, year, month, and number of checkouts per 
 
 - How was the data collected or generated?  
 
-Through
+An artist was creating a data visualization exhibition and used puiblic library data to create their art. To get this data they had to be collecting the data, and they had been for 10 years.
 
 - Why was the data collected?  
 
-Federal mandate to publicise data
+The data was initially collected as part of a data visualization exhibition but then a federal mandate for open data had been implemented and library data was one that had been decided could be collected and published to the public.
 
 - What, if any, ethical questions do you need to consider when working with this data?  
 
-length of checkout
+There are not very many ethical question that I could think of about the data being collected because there is no personal information tied to the collected data. 
 
 - What are possible limitations or problems with this data?   (at least 200 words)
 
-akjdhajksd
+An issue with the data is the inconsistencies within the "Title" and "Creator" section. For example, while detecting for a title, "The Assassin's Blade," there are multiple variations of this title, even though it is by the same author. There may be an different in the categorization of the book because it is not part of the regular ToG series. Although it is the beginning of the main characters story, it is not technically "Book 1". There are also smaller details that may be different and therefore, make it more difficult to search for the proper book. This is a similar issue with the "Creator" section. Some are listed as "Sarah J. Maas" while others are listed as "Maas, Sarah J." For larger dataframes this cause more of an issue, but this dataframe is only part of the whole. 
 
 
 ### First Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title
-- You need a legend for your different line colors and a clear - legend title
 In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
 
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-```{r, echo = FALSE, warning = FALSE, code = readLines("Chart_1.R")}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, code = readLines("Chart_1.R")}
 # line plot of ToG series
 tog_chart
 ```
 
+For the first chart, I looked at the trend between the regular series books from the "Throne of Glass" series with is my personal favorite book series. As you can see, Book 1 made significant increases in checkouts per month compared to the other books in the series with the greatest increase near the start of 2022. Books 2 and 3 follow suit as the others lag behind with books 4 and 5 having the smallest increase. Personally, Book 5 and 7 are my favorite and I wanted to see how they compared to the other books. 
+
 ### Second Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title
-- You need a legend for your different line colors and a clear - legend title
 In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
 
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-```{r, echo = FALSE, code = readLines("Chart_2.R")}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, code = readLines("Chart_2.R")}
 # bar plot Harry Potter book 1 vs 7
 hp_chart
 ```
 
+For chart 2, I wanted to compare the number of checkouts for the first and last book in the Harry Potter series because I am a huge fan of the films and read a few books when I was younger. Something I noticed is, there are significant increases in the first book checkouts while for Deathly Hallows, the checkouts remain pretty consistent throughout the years. After August of 2020, however, the checkouts for the first book die down but still remain more than the last book. 
+
 ### Your Choice
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-```{r, echo = FALSE, code = readLines("Chart_3.R")}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, code = readLines("Chart_3.R")}
 # Sarah J. Maas vs. Victoria Aveyard checkouts
 author_chart
 ```
 
-
+For the last chart, I compared the number of checkouts for two authors, Sarah J. Maas and Victoria Aveyard. These authors have a hold on many YA book readers. Their stories are compelling and entertaining. They know how to keep you attention. Despite their similarities in story telling, SJM clearly has a lead in total checkouts per month compared to Victoria Aveyard. The spike for SJM begins in November of 2020 which is around the time Booktok became a large thing on TikTok.

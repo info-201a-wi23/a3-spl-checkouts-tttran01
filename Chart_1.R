@@ -2,13 +2,13 @@ series1_df <- spl_df %>%
   select(date, Checkouts, Title) %>%
   filter(str_detect(Title, "Throne of Glass"))
 
-series1_df$Title[str_detect(series1_df$Title, "(?i)Crown")] <- "Crown of Midnight"
-series1_df$Title[str_detect(series1_df$Title, "(?i)Heir")] <- "Heir of Fire"
-series1_df$Title[str_detect(series1_df$Title, "(?i)Queen")] <- "Queen of Shadows"
-series1_df$Title[str_detect(series1_df$Title, "(?i)Empire")] <- "Empire of Storms"
-series1_df$Title[str_detect(series1_df$Title, "(?i)Dawn")] <- "Tower of Dawn"
-series1_df$Title[str_detect(series1_df$Title, "(?i)Kingdom")] <- "Kingdom of Ash"
-series1_df$Title[str_starts(series1_df$Title, "(?i)Throne of Glass")] <- "Throne of Glass"
+series1_df$Title[str_detect(series1_df$Title, "(?i)Crown")] <- "Book 2: Crown of Midnight"
+series1_df$Title[str_detect(series1_df$Title, "(?i)Heir")] <- "Book 3: Heir of Fire"
+series1_df$Title[str_detect(series1_df$Title, "(?i)Queen")] <- "Book 4: Queen of Shadows"
+series1_df$Title[str_detect(series1_df$Title, "(?i)Empire")] <- "Book 5: Empire of Storms"
+series1_df$Title[str_detect(series1_df$Title, "(?i)Dawn")] <- "Book 6: Tower of Dawn"
+series1_df$Title[str_detect(series1_df$Title, "(?i)Kingdom")] <- "Book 7: Kingdom of Ash"
+series1_df$Title[str_starts(series1_df$Title, "(?i)Throne of Glass")] <- "Book 1: Throne of Glass"
 series1_df$Title[str_starts(series1_df$Title, "(?i)The Assassin")] <- "The Assassin"
 
 tog_df <- series1_df %>%
